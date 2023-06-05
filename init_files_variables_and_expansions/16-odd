@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -E '^(0|[13579]|README\.md)' /alu-shell/init_files_variables_and_expansions/*
+grep -E '^(0|[13579]|README\.md)' *
