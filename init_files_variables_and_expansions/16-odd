@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -n '^[^0-9]' | grep -E '^[0-9]+-[a-zA-Z]' | cut -d':' -f2-
+grep -E '^(0|[13579]|README\.md)' /alu-shell/init_files_variables_and_expansions/*
