@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script sorts the data from the Apache file
 
-awk '{count[$1" "$9]++} END {for (key in count) {split(key, parts, " "); print count[key], parts[1], parts[2]}}' ./apache-access.log | sort -rn
+awk '{count[$1" "$9]++} END {for (key in count) print count[key], key}' ./apache-access.log | sort -rn
