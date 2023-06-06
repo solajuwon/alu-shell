@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script sorts the data from the Apache file
 
-awk '{count[$1" "$9]++} END {PROCINFO["sorted_in"]="@val_num_desc"; for (key in count) {split(key, parts, " "); printf "%s %s %s\n", count[key], parts[1], parts[2]}}' ./apache-access.log
+awk '{print $1,$9}' apache-access.log | sort | uniq -c | sort -r
