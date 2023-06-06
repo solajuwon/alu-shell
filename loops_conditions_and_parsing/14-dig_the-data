@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script sorts the data from the Apache file
 
-awk '{print $1,$9}' apache-access.log | sort | uniq -c | sort -r
+awk '{print $1,$9}' ./ apache-access.log | sort | uniq -c | sort -r
