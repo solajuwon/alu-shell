@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# script does a lot of things
+
+# Create the file /var/run/myscript.pid containing its PID
+echo $$ > /var/run/myscript.pid
+
+# Function to handle SIGTERM signal
+handle_sigterm() {
+    echo "I hate the kill command"
+    rm /var/run/myscript.pid
+    exit 0
+}
+
+# Function to handle SIGINT signal
+handle_sigint() {
+    echo "Y U no love me?!"
+}
+
+# Function to handle SIGQUIT signal
+handle_sigquit() {
+    echo "Y U no love me?!"
+    rm /var/run/myscript.pid
+    exit 0
+}
+
+# Register signal handlers
+trap 'handle_sigterm' SIGTERM
+trap 'handle_sigint' SIGINT
+trap 'handle_sigquit' SIGQUIT
+
+# Loop to display the message indefinitely
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
