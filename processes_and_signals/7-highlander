@@ -3,7 +3,7 @@
 
 altmessage()
 {
-	echo "I am invincinble!!!"
+	echo "I am invincible!!!"
 }
 trap "altmessage" SIGTERM
 
